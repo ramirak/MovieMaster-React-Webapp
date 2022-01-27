@@ -4,12 +4,12 @@ import {
   StyleSheet,
   View,
   ImageBackground,
-  Image,
   FlatList,
   TouchableOpacity,
 } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
+import global from "../styles/global";
 import Header from "../components/Header";
 
 const Homepage = ({ navigation }) => {
@@ -42,10 +42,10 @@ const Homepage = ({ navigation }) => {
   ]);
 
   return (
-    <View style={styles.container}>
+    <View style={global.container}>
       <ImageBackground
         source={require("../assets/bg-popcorn.jpg")}
-        style={styles.image}
+        style={global.image}
       >
         <Header navigation={navigation} />
         <View style={styles.posters}>
@@ -87,15 +87,6 @@ const Homepage = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  image: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
-    resizeMode: "cover",
-  },
   posters: {
     flex: 1,
     backgroundColor: "#000000a0",
